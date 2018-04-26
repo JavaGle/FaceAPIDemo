@@ -1,0 +1,45 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="FaceID.MainWindow"
+        Title="MainWindow" Height="700" Width="1165">
+    <Grid x:Name="BackPanel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="580"/>
+            <ColumnDefinition Width="580"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="FacePhoto"  Grid.Row="0" Grid.Column="0" Stretch="Uniform" MouseMove="FacePhoto_MouseMove" />
+        <Image x:Name="FacePhoto1" Grid.Row="0" Grid.Column="1" Stretch="Uniform" MouseMove="FacePhoto_MouseMove" />
+        <Button x:Name="BrowseButton1" Grid.Row="0" Grid.Column="0" Width="580" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Content="Browse..."
+                    Click="BrowseButton_Click"/>
+        <Button x:Name="BrowseButton2" Grid.Row="0" Grid.Column="1"  Width="580" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Content="Browse..."
+                    Click="BrowseButton_Click1"/>
+        
+        <DockPanel DockPanel.Dock="Bottom" Grid.Column="0" Grid.Row="1">
+            <StatusBar VerticalAlignment="Bottom">
+                <StatusBarItem Grid.Column="0">
+                    <TextBlock  x:Name="faceDescriptionStatusBar" Width="auto"/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Grid.Column="1" Grid.Row="1">
+            <StatusBar VerticalAlignment="Bottom">
+                <StatusBarItem Grid.Column="1">
+                    <TextBlock  x:Name="faceDescriptionStatusBar1" Width="auto"/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Grid.Row="2" Width="auto">
+            <Button x:Name="CheckSimilar" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Check..." Click="CheckSimilar_Click"/>
+            <TextBlock x:Name="isSameFace" Width="auto"/>
+        </DockPanel>
+    <GridSplitter Grid.Column="0" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
